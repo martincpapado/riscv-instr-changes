@@ -11,11 +11,12 @@ if ((RS1 + insn.s_imm())==0x00000000000c101c)
 else if ((RS1 + insn.s_imm())==0x00000000000c1010)
 {
 	printf ("Received bit=%x\n", RS2);
-	//MMU.spi_receive(RS2);
+	MMU.spi_receive(RS2);
 }
 
 else if ((RS1 + insn.s_imm())==0x00000000000c1018)
 {
+	MMU.update_clk(RS2);
 	printf ("Clock=%x\n", RS2);
 }
 
